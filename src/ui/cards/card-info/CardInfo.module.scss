@@ -1,0 +1,61 @@
+@import 'src/styles/functions';
+@import 'src/styles/colors';
+@import 'src/styles/mixins';
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  gap: rem(8);
+  text-decoration: none;
+  color: var(--color-white-light);
+  font-size: rem(14);
+}
+
+.tag {
+  background-color: rgba($colorGrayLight, 0.5);
+  box-sizing: border-box;
+  padding: rem(4) rem(16);
+  border-radius: rem(16);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  padding: rem(0);
+  border-radius: 100%;
+  width: rem(32);
+  height: rem(32);
+
+  svg {
+    transform: rotate(45deg);
+  }
+}
+
+.green {
+  color: var(--color-green-light);
+  font-weight: 700;
+}
+
+.title {
+  color: var(--color-gray-light);
+  font-size: rem(12);
+  margin-top: rem(64);
+}
+
+.description {
+  margin: 0;
+  font-weight: 700;
+  font-size: rem(18);
+
+  @include media(tablet) {
+    font-size: rem(24);
+  }
+}

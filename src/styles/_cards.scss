@@ -1,0 +1,19 @@
+@import 'src/styles/functions';
+@import 'src/styles/colors';
+
+.card {
+  width: 100%;
+  padding: rem(32);
+  box-sizing: border-box;
+  background: rgb(47, 65, 47);
+  background: linear-gradient(
+    90deg,
+    rgba(64, 152, 120, 0.1) 0%,
+    rgba(20, 20, 25, 1) 26%
+  );
+  border-radius: rem(16);
+}
+
+.card-green {
+  background: rgba($colorGreenLight, 0.05);
+}
