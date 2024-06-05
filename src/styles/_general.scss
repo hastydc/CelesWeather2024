@@ -1,0 +1,17 @@
+@import 'src/styles/colors';
+
+:root {
+  --color-black-light: #{$colorBlackLight};
+  --color-black-dark: #{$colorBlackDark};
+  --color-blue-light: #{$colorBlueLight};
+  --color-blue-medium: #{$colorBlueMedium};
+  --color-gray-light: #{$colorGrayLight};
+  --color-white-light: #{$colorWhiteLight};
+  --color-green-light: #{$colorGreenLight};
+  --color-red-light: #{$colorRedLight};
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

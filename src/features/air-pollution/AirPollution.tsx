@@ -1,7 +1,9 @@
+import Style from './AirPollution.module.scss';
+
 const AirPollution = () => {
   return (
     <>
-      <div>Air pollution</div>
+      <div className={`${Style.air}`}>Air pollution</div>
     </>
   );
 };
