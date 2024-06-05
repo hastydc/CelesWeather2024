@@ -29,6 +29,9 @@
   width: 100%;
   box-sizing: border-box;
   padding: rem(32);
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
 
   @include media(tablet) {
     margin-left: rem(128);
@@ -41,4 +44,18 @@
 
 .content {
   width: 100%;
+  margin: 0 auto;
+  border-top: rem(2) solid var(--color-gray-light);
+  padding: rem(32) rem(0);
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  max-height: calc(100vh - rem(335));
+  min-height: calc(100vh - rem(335));
+
+  @include media(tablet) {
+    max-width: 90%;
+    max-height: calc(100vh - rem(240));
+    min-height: calc(100vh - rem(240));
+  }
 }
