@@ -1,0 +1,27 @@
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  width: 100%;
+
+  @include media(tablet) {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+
+.title {
+  flex: 1;
+}
+
+.actions {
+  min-width: rem(300);
+  width: 100%;
+
+  @include media(tablet) {
+    width: auto;
+  }
+}
