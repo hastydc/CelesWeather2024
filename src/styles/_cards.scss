@@ -1,5 +1,6 @@
 @import 'src/styles/functions';
 @import 'src/styles/colors';
+@import 'src/styles/mixins';
 
 .card {
   width: 100%;
@@ -16,4 +17,17 @@
 
 .card-green {
   background: rgba($colorGreenLight, 0.05);
+}
+
+.card-small,
+.card-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card-small {
+  @include media(tablet) {
+    width: calc(50% - rem(16));
+  }
 }

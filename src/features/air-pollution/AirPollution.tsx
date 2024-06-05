@@ -1,5 +1,4 @@
 import CardInfo from 'src/ui/cards/card-info/CardInfo';
-import Style from './AirPollution.module.scss';
 import CardList from 'src/ui/cards/card-list/CardList';
 import { cardInfo, cardList } from './AirPollution.mock';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
@@ -7,18 +6,18 @@ import CardChart from 'src/ui/cards/card-chart/CardChart';
 const AirPollution = () => {
   return (
     <>
-      <div className={`${Style.air}`}>
-        <div className={`card ${Style.smallCard}`}>
+      <div className={`page`}>
+        <div className={`card card-small`}>
           <CardInfo {...cardInfo} />
         </div>
 
-        <div className={`card card-green ${Style.smallCard}`}>
+        <div className={`card card-green card-small`}>
           <CardList {...cardList} />
         </div>
 
-        <div className={`${Style.fullCard}`}>
-          <h2 className={Style.cardTitle}>Chart</h2>
-          <div className={`card card-green ${Style.fullCard}`}>
+        <div className={`card-full`}>
+          <h2 className={`text-gray`}>Chart</h2>
+          <div className={`card card-green card-full`}>
             <CardChart />
           </div>
         </div>
