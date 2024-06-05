@@ -1,0 +1,37 @@
+@import 'src/styles/mixins';
+@import 'src/styles/functions';
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  box-sizing: border-box;
+
+  @include media(tablet) {
+    flex-direction: row;
+  }
+}
+
+.menu {
+  width: 100%;
+  height: rem(64);
+  position: fixed;
+  bottom: 0;
+
+  @include media(tablet) {
+    width: rem(128);
+    height: 100vh;
+  }
+}
+
+.mainContent {
+  @include media(tablet) {
+    margin-left: rem(128);
+  }
+}
+
+.header {
+}
+
+.content {
+}

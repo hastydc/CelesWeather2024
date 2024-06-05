@@ -1,0 +1,53 @@
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+.menuSidebar {
+  height: rem(64);
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-color: var(--color-black-dark);
+  display: flex;
+
+  @include media(tablet) {
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+}
+
+.logo {
+  width: rem(64);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include media(tablet) {
+    width: 100%;
+    height: rem(128);
+    position: absolute;
+    margin: inherit;
+    top: 0;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+
+  @include media(tablet) {
+    flex-direction: column;
+    max-height: 300px;
+  }
+}
+
+.menuItem {
+  height: 100%;
+  width: 100%;
+}
