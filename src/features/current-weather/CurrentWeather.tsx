@@ -1,5 +1,4 @@
 import CardInfo from 'src/ui/cards/card-info/CardInfo';
-import Style from './CurrentWeather.module.scss';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
 import { cardInfo } from './CurrentWeather.mock';
 
