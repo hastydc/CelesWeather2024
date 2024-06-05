@@ -1,0 +1,40 @@
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+@import 'src/styles/colors';
+
+.cardList {
+  overflow-x: auto;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.table {
+  min-width: 100%;
+}
+
+.tr {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(20, 20, 25, 0.5) 60%,
+    rgba(64, 152, 120, 0.2) 100%
+  );
+}
+
+.th,
+.td {
+  text-align: left;
+  font-size: rem(14);
+  padding: rem(8);
+}
+
+.th {
+  padding: rem(16) rem(8);
+  text-align: left;
+}
+
+.td {
+  box-sizing: border-box;
+  border-bottom: rem(1) solid rgba($colorWhiteLight, 0.3);
+}
