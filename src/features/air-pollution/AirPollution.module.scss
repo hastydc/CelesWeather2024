@@ -16,7 +16,12 @@
 .smallCard,
 .fullCard {
   display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.cardTitle {
+  color: var(--color-gray-light);
 }
 
 .smallCard {

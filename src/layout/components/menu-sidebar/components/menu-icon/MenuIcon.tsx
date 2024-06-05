@@ -11,8 +11,6 @@ const MenuIcon = ({ menuItem: { label, icon, link } }: IconProps) => {
 
   const active = link === location.pathname;
 
-  console.log(link, location.pathname, active);
-
   return (
     <>
       <Link
