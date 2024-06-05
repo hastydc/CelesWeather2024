@@ -3,7 +3,7 @@ import Style from './Toast.module.scss';
 const Toast = () => {
   return (
     <>
-      <div className={`${Style.toast}`}>Toast</div>
+      <div className={`${Style.toast}`}></div>
     </>
   );
 };

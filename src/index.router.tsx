@@ -30,6 +30,10 @@ const IndexRouter = () =>
           path: RoutePath.FORECAST,
           element: <Forecast />,
         },
+        {
+          path: RoutePath.NOT_FOUND,
+          element: <AirPollution />,
+        },
       ],
     },
   ]);
