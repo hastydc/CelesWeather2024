@@ -6,7 +6,15 @@ import useRequest from 'src/api/useRequest';
 import { Entity } from 'src/models/enums/entity.enum';
 
 const AirPollution = () => {
-  const { data } = useRequest(Entity.AIR_POLLUTION);
+  const getParams = (): string => {
+    const date = new Date();
+    const endDate = date.getTime();
+    date.setMonth(date.getMonth() - 3);
+    const startDate = date.getTime();
+    return `&start=${startDate}&end=${endDate}`;
+  };
+
+  const { data } = useRequest(Entity.AIR_POLLUTION, getParams());
 
   console.log(data);
 
