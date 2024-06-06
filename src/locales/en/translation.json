@@ -9,5 +9,9 @@
   "currentWeather": "Current weather",
   "loading": "Loading",
   "airPollutionInLastThreeMonths": "Air pollution last 3 months",
-  "fiveDayWeatherForecast": "5 day weather forecast"
+  "fiveDayWeatherForecast": "5 day weather forecast",
+  "main": "Main",
+  "clouds": "Clouds",
+  "rain": "Rain",
+  "wind": "Wind"
 }

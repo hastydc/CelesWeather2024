@@ -16,6 +16,9 @@
   justify-content: center;
   gap: rem(32);
   width: 100%;
+  box-sizing: border-box;
+  padding-bottom: rem(32);
+  border-bottom: rem(1) solid var(--color-gray-light);
 
   @include media(tablet) {
     align-items: start;
