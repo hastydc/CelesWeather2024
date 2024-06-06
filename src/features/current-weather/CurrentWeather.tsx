@@ -2,12 +2,10 @@ import CardInfo from 'src/ui/cards/card-info/CardInfo';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
 import { cardInfo } from './CurrentWeather.mock';
 import useRequest from 'src/api/useRequest';
-import { Entity } from 'src/models/enums/entity.enum';
+import { Model } from 'src/models/enums/model.enum';
 
 const CurrentWeather = () => {
-  const { data } = useRequest(Entity.WEATHER);
-
-  console.log(data);
+  // const { data } = useRequest(Entity.WEATHER);
 
   return (
     <>

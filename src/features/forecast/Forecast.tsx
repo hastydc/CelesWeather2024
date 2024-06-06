@@ -1,13 +1,11 @@
 import CardInfo from 'src/ui/cards/card-info/CardInfo';
 import { cardInfo } from './Forecast.mock';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
-import { Entity } from 'src/models/enums/entity.enum';
+import { Model } from 'src/models/enums/model.enum';
 import useRequest from 'src/api/useRequest';
 
 const Forecast = () => {
-  const { data } = useRequest(Entity.FORECAST);
-
-  console.log(data);
+  // const { data } = useRequest(Entity.FORECAST);
 
   return (
     <>

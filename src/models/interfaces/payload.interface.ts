@@ -1,5 +1,5 @@
 export interface Payload {
-  entity: string;
+  model: string;
   latitude: number;
   longitude: number;
   params?: string;

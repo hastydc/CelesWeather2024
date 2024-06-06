@@ -2,6 +2,15 @@
 @import 'src/styles/colors';
 @import 'src/styles/mixins';
 
+@keyframes loading {
+  0% {
+    background-color: rgba($colorGreenLight, 0.1);
+  }
+  100% {
+    background-color: rgba($colorGreenLight, 0.05);
+  }
+}
+
 .card {
   width: 100%;
   padding: rem(32);
@@ -13,6 +22,7 @@
     rgba(20, 20, 25, 1) 26%
   );
   border-radius: rem(16);
+  position: relative;
 }
 
 .card-green {
@@ -30,4 +40,9 @@
   @include media(tablet) {
     width: calc(50% - rem(16));
   }
+}
+
+.card-loading {
+  height: rem(350);
+  animation: loading 1s linear infinite alternate;
 }

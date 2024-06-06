@@ -1,7 +1,11 @@
 import Style from './CardChart.module.scss';
 import Chart from '../../chart/Chart';
 
-const CardChart = () => {
+type CardChartProps = {
+  data?: any;
+};
+
+const CardChart = ({ data }: CardChartProps) => {
   return (
     <>
       <div className={Style.CardChart}>

@@ -2,21 +2,11 @@ import CardInfo from 'src/ui/cards/card-info/CardInfo';
 import CardList from 'src/ui/cards/card-list/CardList';
 import { cardInfo, cardList } from './AirPollution.mock';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
-import useRequest from 'src/api/useRequest';
-import { Entity } from 'src/models/enums/entity.enum';
+import useApi from './hooks/useApi';
+import CardError from 'src/ui/cards/card-error/CardError';
 
 const AirPollution = () => {
-  const getParams = (): string => {
-    const date = new Date();
-    const endDate = date.getTime();
-    date.setMonth(date.getMonth() - 3);
-    const startDate = date.getTime();
-    return `&start=${startDate}&end=${endDate}`;
-  };
-
-  const { data } = useRequest(Entity.AIR_POLLUTION, getParams());
-
-  console.log(data);
+  const { data, isLoading, error } = useApi();
 
   return (
     <>
@@ -31,8 +21,15 @@ const AirPollution = () => {
 
         <div className={`card-full`}>
           <h2 className={`text-gray`}>Chart</h2>
-          <div className={`card card-green card-full`}>
-            <CardChart />
+
+          <div
+            className={`card card-green card-full ${
+              isLoading ? 'card-loading' : ''
+            }`}
+          >
+            {error ? <CardError /> : null}
+
+            {!isLoading && !error ? <CardChart data={data} /> : null}
           </div>
         </div>
       </div>
