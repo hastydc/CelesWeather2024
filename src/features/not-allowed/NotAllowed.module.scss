@@ -1,0 +1,37 @@
+@import 'src/styles/colors';
+@import 'src/styles/functions';
+@import 'src/styles/mixins';
+
+.notAllowed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.button {
+  border-radius: rem(16);
+  background-color: rgba($colorGrayLight, 0.5);
+  color: var(--color-white-light);
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: rem(16) rem(4);
+  font-size: rem(16);
+  gap: rem(8);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: flex;
+  width: rem(320);
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: rem(32) auto;
+
+  @include media(tablet) {
+  }
+}

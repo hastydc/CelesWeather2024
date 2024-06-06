@@ -3,4 +3,5 @@ export enum RoutePath {
   CURRENT_WEATHER = '/current-weather',
   FORECAST = '/forecast',
   NOT_FOUND = '*',
+  NOT_ALLOWED = '/not-allowed',
 }
