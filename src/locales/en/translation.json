@@ -1,0 +1,11 @@
+{
+  "chart": "Chart",
+  "hello": "Hello",
+  "searchPey": "Search Pey",
+  "getMore": "Get more",
+  "info": "info",
+  "airPollution": "Air pollution",
+  "precipitationProbabilityAndTemperature": "Precipitation probability and temperature",
+  "currentWeather": "Current weather",
+  "loading": "Loading"
+}

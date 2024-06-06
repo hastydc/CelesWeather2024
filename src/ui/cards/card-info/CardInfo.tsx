@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Style from './CardInfo.module.scss';
 import { FaArrowUp } from 'react-icons/fa6';
+import { useTranslation } from 'react-i18next';
 
 type CardInfoProps = {
   link: string;
@@ -9,12 +10,15 @@ type CardInfoProps = {
 };
 
 const CardInfo = ({ link, title, description }: CardInfoProps) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className={Style.cardInfo}>
         <Link to={link} target="_blank" className={Style.tags}>
           <div className={Style.tag}>
-            Get more &nbsp;<span className={Style.green}>info</span>
+            {t('getMore')} &nbsp;
+            <span className={Style.green}>{t('info')}</span>
           </div>
           <div className={`${Style.tag} ${Style.green} ${Style.arrow}`}>
             <FaArrowUp />

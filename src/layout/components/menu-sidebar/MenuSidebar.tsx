@@ -4,26 +4,29 @@ import { MenuItem } from 'src/models/interfaces/menuItem.interface';
 import MenuIcon from './components/menu-icon/MenuIcon';
 import Style from './MenuSidebar.module.scss';
 import Logo from 'src/ui/logo/Logo';
-
-const menuItems: MenuItem[] = [
-  {
-    label: 'Air pollution',
-    icon: <FaHome />,
-    link: RoutePath.HOME,
-  },
-  {
-    label: 'Precipitation probability and temperature',
-    icon: <FaSearchMinus />,
-    link: RoutePath.FORECAST,
-  },
-  {
-    label: 'Current weather',
-    icon: <FaMixcloud />,
-    link: RoutePath.CURRENT_WEATHER,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const MenuSideBar = () => {
+  const { t } = useTranslation();
+
+  const menuItems: MenuItem[] = [
+    {
+      label: t('airPollution'),
+      icon: <FaHome />,
+      link: RoutePath.HOME,
+    },
+    {
+      label: t('precipitationProbabilityAndTemperature'),
+      icon: <FaSearchMinus />,
+      link: RoutePath.FORECAST,
+    },
+    {
+      label: t('currentWeather'),
+      icon: <FaMixcloud />,
+      link: RoutePath.CURRENT_WEATHER,
+    },
+  ];
+
   return (
     <>
       <div className={Style.menuSidebar}>

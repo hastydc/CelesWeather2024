@@ -4,9 +4,11 @@ import { cardInfo, cardList } from './AirPollution.mock';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
 import useApi from './hooks/useApi';
 import CardError from 'src/ui/cards/card-error/CardError';
+import { useTranslation } from 'react-i18next';
 
 const AirPollution = () => {
   const { data, isLoading, error } = useApi();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -20,7 +22,7 @@ const AirPollution = () => {
         </div>
 
         <div className={`card-full`}>
-          <h2 className={`text-gray`}>Chart</h2>
+          <h2 className={`text-gray`}>{t('chart')}</h2>
 
           <div
             className={`card card-green card-full ${
