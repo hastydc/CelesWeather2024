@@ -22,6 +22,7 @@ const useApi = () => {
 
   useEffect(() => {
     console.log(source);
+
     setData([
       {
         name: t('fiveDayWeatherForecast'),

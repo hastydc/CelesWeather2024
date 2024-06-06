@@ -2,7 +2,6 @@ import Header from './components/header/Header';
 import MenuSideBar from './components/menu-sidebar/MenuSidebar';
 import LayoutContextProvider from './layout.context';
 import LayoutWrapper from './Layout.wrapper';
-import Toast from 'src/ui/toast/Toast';
 import Style from './Layout.module.scss';
 import { Suspense } from 'react';
 import Loading from 'src/ui/loading/Loading';
@@ -24,9 +23,6 @@ const Layout = () => (
             </Suspense>
           </div>
         </div>
-        <aside>
-          <Toast />
-        </aside>
       </main>
     </LayoutContextProvider>
   </>
