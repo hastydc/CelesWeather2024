@@ -6,11 +6,14 @@ const Search = () => {
 
   return (
     <>
-      <input
-        placeholder={t('searchPey')}
-        className={Style.search}
-        disabled={true}
-      />
+      <div className="tooltip-wrapper">
+        <input
+          placeholder={t('searchPey')}
+          className={Style.search}
+          disabled={true}
+        />
+        <span className="tooltip">{t('notAvailable')}</span>
+      </div>
     </>
   );
 };

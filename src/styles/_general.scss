@@ -43,6 +43,28 @@ body {
   overflow: hidden;
 }
 
+.tooltip-wrapper {
+  position: relative;
+
+  &:hover {
+    .tooltip {
+      display: flex;
+    }
+  }
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: rem(-44);
+  background-color: var(--color-black-dark);
+  color: var(--color-white-light);
+  box-sizing: border-box;
+  padding: rem(8) rem(16);
+  border-radius: rem(16);
+  font-size: rem(12);
+}
+
 ::-webkit-scrollbar {
   width: rem(4);
 }

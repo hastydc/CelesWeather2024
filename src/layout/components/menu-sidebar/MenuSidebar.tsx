@@ -16,7 +16,7 @@ const MenuSideBar = () => {
       link: RoutePath.HOME,
     },
     {
-      label: t('precipitationProbabilityAndTemperature'),
+      label: t('temperature'),
       icon: <FaSearchMinus />,
       link: RoutePath.FORECAST,
     },

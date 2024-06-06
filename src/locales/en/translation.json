@@ -14,5 +14,8 @@
   "clouds": "Clouds",
   "rain": "Rain",
   "wind": "Wind",
-  "day": "Day {{day}}"
+  "day": "Day {{day}}",
+  "temperature": "Temperature",
+  "notAvailable": "Not available",
+  "contactUs": "Contact us"
 }

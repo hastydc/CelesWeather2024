@@ -15,9 +15,12 @@ const MenuIcon = ({ menuItem: { label, icon, link } }: IconProps) => {
     <>
       <Link
         to={link}
-        className={`${Style.menuIcon} ${active ? Style.active : ''}`}
+        className={`tooltip-wrapper ${Style.menuIcon} ${
+          active ? Style.active : ''
+        }`}
       >
         {icon}
+        <span className="tooltip">{label}</span>
       </Link>
     </>
   );
