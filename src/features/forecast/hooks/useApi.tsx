@@ -4,6 +4,23 @@ import useRequest from 'src/api/useRequest';
 import { LayoutContext } from 'src/layout/layout.context';
 import { Model } from 'src/models/enums/model.enum';
 
+const getList = (source: any, t: any) => {
+  let list = source?.list;
+
+  if (!list?.length) return [];
+
+  list.splice(5);
+  list = list.map((x: any, index: number) => ({
+    feels_like: x.main.feels_like,
+    temp_max: x.main.temp_max,
+    temp_min: x.main.temp_min,
+    temp: x.main.temp,
+    name: t('day', { day: index + 1 }),
+  }));
+
+  return list;
+};
+
 const useApi = () => {
   const [data, setData] = useState({});
   const { coordinates } = useContext(LayoutContext);
@@ -21,13 +38,7 @@ const useApi = () => {
   }, [coordinates, refetch]);
 
   useEffect(() => {
-    console.log(source);
-
-    setData([
-      {
-        name: t('fiveDayWeatherForecast'),
-      },
-    ]);
+    setData(getList(source, t));
   }, [source, t]);
 
   return { data, isLoading, error };

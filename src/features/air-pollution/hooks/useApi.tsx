@@ -12,6 +12,20 @@ const getParams = (): string => {
   return `&start=${startDate}&end=${endDate}`;
 };
 
+const getData = (source: any, t: any) => {
+  if (!source?.list?.length) return [];
+
+  const tmpData = {
+    name: t('airPollutionInLastThreeMonths'),
+    ...(source?.list[0]?.components ?? {}),
+  };
+
+  delete tmpData['co'];
+  delete tmpData['o3'];
+
+  return [tmpData];
+};
+
 const useApi = () => {
   const [data, setData] = useState({});
   const { coordinates } = useContext(LayoutContext);
@@ -29,17 +43,7 @@ const useApi = () => {
   }, [coordinates, refetch]);
 
   useEffect(() => {
-    if (!source?.list?.length) return;
-
-    const tmpData = {
-      name: t('airPollutionInLastThreeMonths'),
-      ...(source?.list[0]?.components ?? {}),
-    };
-
-    delete tmpData['co'];
-    delete tmpData['o3'];
-
-    setData([tmpData]);
+    setData(getData(source, t));
   }, [source, t]);
 
   return { data, isLoading, error };

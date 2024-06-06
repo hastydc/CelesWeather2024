@@ -13,5 +13,6 @@
   "main": "Main",
   "clouds": "Clouds",
   "rain": "Rain",
-  "wind": "Wind"
+  "wind": "Wind",
+  "day": "Day {{day}}"
 }
