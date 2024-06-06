@@ -52,7 +52,7 @@ const IndexRouter = () =>
       },
     ],
     {
-      basename: process.env.REACT_APP_BASE_HREF,
+      basename: process.env.REACT_APP_BASE_NAME,
     }
   );
 
