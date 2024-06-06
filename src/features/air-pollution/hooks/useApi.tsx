@@ -31,12 +31,15 @@ const useApi = () => {
   useEffect(() => {
     if (!source?.list?.length) return;
 
-    setData([
-      {
-        name: t('airPollutionInLastThreeMonths'),
-        ...(source?.list[0]?.components ?? {}),
-      },
-    ]);
+    const tmpData = {
+      name: t('airPollutionInLastThreeMonths'),
+      ...(source?.list[0]?.components ?? {}),
+    };
+
+    delete tmpData['co'];
+    delete tmpData['o3'];
+
+    setData([tmpData]);
   }, [source, t]);
 
   return { data, isLoading, error };
