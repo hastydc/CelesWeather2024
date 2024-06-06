@@ -1,12 +1,13 @@
 import CardInfo from 'src/ui/cards/card-info/CardInfo';
-import CardChart from 'src/ui/cards/card-chart/CardChart';
 import { cardInfo } from './CurrentWeather.mock';
-import useRequest from 'src/api/useRequest';
-import { Model } from 'src/models/enums/model.enum';
-import { ChartType } from 'src/models/enums/chartType.enum';
+import useApi from './hooks/useApi';
+import { useTranslation } from 'react-i18next';
+import CardError from 'src/ui/cards/card-error/CardError';
+import CardWeather from 'src/ui/cards/card-weather/CardWeather';
 
 const CurrentWeather = () => {
-  // const { data } = useRequest(Entity.WEATHER);
+  const { data, isLoading, error } = useApi();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -16,9 +17,16 @@ const CurrentWeather = () => {
         </div>
 
         <div className={`card-full`}>
-          <h2 className={`text-gray`}>Chart</h2>
-          <div className={`card card-green card-*full`}>
-            <CardChart type={ChartType.LINE} />
+          <h2 className={`text-gray`}>{t('chart')}</h2>
+
+          <div
+            className={`card card-green card-full ${
+              isLoading ? 'card-loading' : ''
+            }`}
+          >
+            {error ? <CardError /> : <></>}
+
+            {!isLoading && !error ? <CardWeather data={data} /> : <></>}
           </div>
         </div>
       </div>

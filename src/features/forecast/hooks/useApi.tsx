@@ -4,14 +4,6 @@ import useRequest from 'src/api/useRequest';
 import { LayoutContext } from 'src/layout/layout.context';
 import { Model } from 'src/models/enums/model.enum';
 
-const getParams = (): string => {
-  const date = new Date();
-  const endDate = date.getTime();
-  date.setMonth(date.getMonth() - 3);
-  const startDate = date.getTime();
-  return `&start=${startDate}&end=${endDate}`;
-};
-
 const useApi = () => {
   const [data, setData] = useState({});
   const { coordinates } = useContext(LayoutContext);
@@ -22,19 +14,17 @@ const useApi = () => {
     isLoading,
     error,
     refetch,
-  } = useRequest(Model.AIR_POLLUTION, getParams());
+  } = useRequest(Model.FORECAST);
 
   useEffect(() => {
     if (coordinates.latitude && coordinates.longitude) refetch();
   }, [coordinates, refetch]);
 
   useEffect(() => {
-    if (!source?.list?.length) return;
-
+    console.log(source);
     setData([
       {
-        name: t('airPollutionInLastThreeMonths'),
-        ...(source?.list[0]?.components ?? {}),
+        name: t('fiveDayWeatherForecast'),
       },
     ]);
   }, [source, t]);

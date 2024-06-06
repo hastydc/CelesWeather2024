@@ -59,7 +59,6 @@ type ChartProps = {
 };
 
 const ChartLine = ({ data }: ChartProps) => {
-  console.log(data);
   return (
     <>
       <div className="chart-wrapper">

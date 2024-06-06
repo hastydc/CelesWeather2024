@@ -14,7 +14,7 @@ type ChartProps = {
   data: any;
 };
 
-const ChartBar = ({ data }: ChartProps) => {
+const ChartBar = ({ data = [] }: ChartProps) => {
   return (
     <>
       <div className="chart-wrapper">

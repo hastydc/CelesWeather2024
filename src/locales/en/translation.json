@@ -8,5 +8,6 @@
   "precipitationProbabilityAndTemperature": "Precipitation probability and temperature",
   "currentWeather": "Current weather",
   "loading": "Loading",
-  "airPollutionInLastThreeMonths": "Air pollution last 3 months"
+  "airPollutionInLastThreeMonths": "Air pollution last 3 months",
+  "fiveDayWeatherForecast": "5 day weather forecast"
 }
