@@ -1,6 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import Style from './Search.module.scss';
 
+/**
+ * Search component for header
+ * @returns {Object} component
+ */
 const Search = () => {
   const { t } = useTranslation();
 

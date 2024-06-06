@@ -1,3 +1,6 @@
+/**
+ * Card info props
+ */
 const cardInfo = {
   link: 'https://openweathermap.org/api/air-pollution',
   title: 'Air pollution concept',
@@ -6,6 +9,9 @@ const cardInfo = {
   `,
 };
 
+/**
+ * Card list props
+ */
 const cardList = {
   title: 'OpenWeather scale for Air Quality Index levels',
   th: [

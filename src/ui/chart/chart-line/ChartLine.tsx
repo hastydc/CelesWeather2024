@@ -10,10 +10,18 @@ import {
 } from 'recharts';
 import { getHexColor } from 'src/utils/Utils';
 
+/**
+ * Props for chart line
+ */
 type ChartProps = {
   data: any;
 };
 
+/**
+ * Chart line component
+ * @param {ChartProps} props
+ * @returns {Object} component
+ */
 const ChartLine = ({ data }: ChartProps) => {
   return (
     <>

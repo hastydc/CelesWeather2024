@@ -1,7 +1,13 @@
+/**
+ * file to set up i18n
+ */
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translationEN from 'src/locales/en/translation.json';
 
+/**
+ * Object with lang files related
+ */
 const resources = {
   en: {
     translation: translationEN,

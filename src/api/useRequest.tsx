@@ -1,20 +1,21 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { LayoutContext } from 'src/layout/layout.context';
+import { Model } from 'src/models/enums/model.enum';
 import { Payload } from 'src/models/interfaces/payload.interface';
 
 const getRequestUrl = ({
-  model: entity,
+  model,
   latitude,
   longitude,
   params,
 }: Payload): string =>
-  `${process.env.REACT_APP_API_URL}${entity}?lat=${latitude}&lon=${longitude}${
+  `${process.env.REACT_APP_API_URL}${model}?lat=${latitude}&lon=${longitude}${
     params ? params : ''
   }&appid=${process.env.REACT_APP_TOKEN}`;
 
-const useRequest = (model: string, params?: string) => {
+const useRequest = (model: Model, params?: string) => {
   const { coordinates } = useContext(LayoutContext);
   const { isLoading, error, data, refetch } = useQuery({
     queryKey: [module],

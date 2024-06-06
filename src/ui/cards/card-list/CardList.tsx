@@ -1,11 +1,19 @@
 import Style from './CardList.module.scss';
 
+/**
+ * Card list props
+ */
 type CardListProps = {
   th: { label: string; colSpan?: number }[];
   td: string[][];
   title: string;
 };
 
+/**
+ * Card list component
+ * @param {CardListProps} props
+ * @returns {Object} component
+ */
 const CardList = ({ th, td, title }: CardListProps) => {
   return (
     <>

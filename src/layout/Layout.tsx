@@ -6,6 +6,10 @@ import Style from './Layout.module.scss';
 import { Suspense } from 'react';
 import Loading from 'src/ui/loading/Loading';
 
+/**
+ * Layout component
+ * @returns {Object} component
+ */
 const Layout = () => (
   <>
     <LayoutContextProvider>

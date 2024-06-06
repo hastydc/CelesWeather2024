@@ -5,6 +5,10 @@ import { LayoutContext } from 'src/layout/layout.context';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'src/models/enums/routePath.enum';
 
+/**
+ * Not allowed component, used to request location permission and get user current coordinates
+ * @returns {Object} response
+ */
 const NotAllowed = () => {
   const { coordinates, setCoordinates } = useContext(LayoutContext);
   const navigate = useNavigate();

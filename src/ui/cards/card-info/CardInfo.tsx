@@ -3,12 +3,20 @@ import Style from './CardInfo.module.scss';
 import { FaArrowUp } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Card info props
+ */
 type CardInfoProps = {
   link: string;
   title: string;
   description: string;
 };
 
+/**
+ * Card info component
+ * @param {CardInfoProps} props
+ * @returns {Object} component
+ */
 const CardInfo = ({ link, title, description }: CardInfoProps) => {
   const { t } = useTranslation();
 

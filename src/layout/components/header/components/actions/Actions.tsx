@@ -2,6 +2,10 @@ import Contact from './contact/Contact';
 import Search from './search/Search';
 import Style from './Actions.module.scss';
 
+/**
+ * Actions component for header
+ * @returns {Object} component
+ */
 export const Actions = () => {
   return (
     <>

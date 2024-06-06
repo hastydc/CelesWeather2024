@@ -2,13 +2,20 @@ import { MenuItem } from 'src/models/interfaces/menuItem.interface';
 import Style from './MenuIcon.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 
-type IconProps = {
+/**
+ * IconProps
+ */
+type MenuIconProps = {
   menuItem: MenuItem;
 };
 
-const MenuIcon = ({ menuItem: { label, icon, link } }: IconProps) => {
+/**
+ * Menu icon component
+ * @param {MenuIconProps} props
+ * @returns {Object} component
+ */
+const MenuIcon = ({ menuItem: { label, icon, link } }: MenuIconProps) => {
   const location = useLocation();
-
   const active = link === location.pathname;
 
   return (

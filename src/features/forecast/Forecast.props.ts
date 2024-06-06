@@ -1,3 +1,6 @@
+/**
+ * Card info props
+ */
 const cardInfo = {
   link: 'https://openweathermap.org/forecast5',
   title: '5 day weather forecast',

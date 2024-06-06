@@ -2,6 +2,10 @@ import { getCurrentDate } from 'src/utils/Utils';
 import Style from './Title.module.scss';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Title component for header
+ * @returns {Object} component
+ */
 const Title = () => {
   const userName = 'Warren';
   const date = getCurrentDate();

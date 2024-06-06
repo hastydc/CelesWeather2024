@@ -1,3 +1,7 @@
+/**
+ * Card error component
+ * @returns {Object} component
+ */
 const CardError = () => {
   return (
     <>

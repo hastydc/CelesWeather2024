@@ -3,6 +3,10 @@ import { BiLogoReact } from 'react-icons/bi';
 import Style from './Logo.module.scss';
 import { RoutePath } from 'src/models/enums/routePath.enum';
 
+/**
+ * Component for app logo
+ * @returns {Object} component
+ */
 const Logo = () => {
   return (
     <>

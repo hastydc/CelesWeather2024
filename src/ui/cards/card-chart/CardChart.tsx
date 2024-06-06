@@ -3,11 +3,19 @@ import ChartLine from '../../chart/chart-line/ChartLine';
 import ChartBar from 'src/ui/chart/chart-bar/ChartBar';
 import { ChartType } from 'src/models/enums/chartType.enum';
 
+/**
+ * Card chart props
+ */
 type CardChartProps = {
   data?: any;
   type: ChartType;
 };
 
+/**
+ * Card chart component
+ * @param {CardChartProps} props
+ * @returns {Object} component
+ */
 const CardChart = ({ data, type }: CardChartProps) => {
   return (
     <>

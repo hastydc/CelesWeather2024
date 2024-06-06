@@ -8,10 +8,16 @@ import {
   FaWind,
 } from 'react-icons/fa6';
 
+/**
+ * Card weather props
+ */
 type CardWeatherProps = {
   data: any;
 };
 
+/**
+ * Items to display in Card
+ */
 const items = [
   {
     key: 'main',
@@ -31,6 +37,11 @@ const items = [
   },
 ];
 
+/**
+ * Card weather component
+ * @param {CardWeatherProps} props
+ * @returns {Object} component
+ */
 const CardWeather = ({ data }: CardWeatherProps) => {
   const { t } = useTranslation();
 

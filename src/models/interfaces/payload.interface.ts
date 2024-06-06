@@ -1,6 +1,18 @@
+import { Model } from '../enums/model.enum';
+
+/**
+ * Payload
+ */
 export interface Payload {
-  model: string;
+  /** model */
+  model: Model;
+
+  /** latitude */
   latitude: number;
+
+  /** longitude */
   longitude: number;
+
+  /** more query params */
   params?: string;
 }

@@ -1,10 +1,14 @@
 import CardInfo from 'src/ui/cards/card-info/CardInfo';
-import { cardInfo } from './CurrentWeather.mock';
+import { cardInfo } from './CurrentWeather.props';
 import useApi from './hooks/useApi';
 import { useTranslation } from 'react-i18next';
 import CardError from 'src/ui/cards/card-error/CardError';
 import CardWeather from 'src/ui/cards/card-weather/CardWeather';
 
+/**
+ * Current weather
+ * @returns {Object} response
+ */
 const CurrentWeather = () => {
   const { data, isLoading, error } = useApi();
   const { t } = useTranslation();

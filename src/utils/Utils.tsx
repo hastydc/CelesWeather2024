@@ -1,3 +1,7 @@
+/**
+ * Get date formated in Day, Month Day number
+ * @returns {string} response
+ */
 export const getCurrentDate = (): string => {
   let currentDate = new Date();
 
@@ -8,6 +12,10 @@ export const getCurrentDate = (): string => {
   return `${weekday}, ${month} ${day}`;
 };
 
+/**
+ * Get random hexadecimal color for charts
+ * @returns {string} response
+ */
 export const getHexColor = (): string => {
   const n = (Math.random() * 0xfffff * 1000000).toString(16);
 

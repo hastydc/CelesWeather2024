@@ -1,12 +1,16 @@
 import CardInfo from 'src/ui/cards/card-info/CardInfo';
 import CardList from 'src/ui/cards/card-list/CardList';
-import { cardInfo, cardList } from './AirPollution.mock';
+import { cardInfo, cardList } from './AirPollution.props';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
 import useApi from './hooks/useApi';
 import CardError from 'src/ui/cards/card-error/CardError';
 import { useTranslation } from 'react-i18next';
 import { ChartType } from 'src/models/enums/chartType.enum';
 
+/**
+ * Air pollution
+ * @returns {Object} component
+ */
 const AirPollution = () => {
   const { data, isLoading, error } = useApi();
   const { t } = useTranslation();

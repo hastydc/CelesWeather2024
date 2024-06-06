@@ -4,7 +4,11 @@ import useRequest from 'src/api/useRequest';
 import { LayoutContext } from 'src/layout/layout.context';
 import { Model } from 'src/models/enums/model.enum';
 
-const getParams = (): string => {
+/**
+ * Get additional query params with date range
+ * @returns {string} response
+ */
+const getQueryParams = (): string => {
   const date = new Date();
   const endDate = date.getTime();
   date.setMonth(date.getMonth() - 3);
@@ -12,7 +16,13 @@ const getParams = (): string => {
   return `&start=${startDate}&end=${endDate}`;
 };
 
-const getData = (source: any, t: any) => {
+/**
+ * Format response from api to send to chart component
+ * @param {Object} source
+ * @param {Function} t
+ * @returns {Array} response
+ */
+const formatResponse = (source: any, t: any) => {
   if (!source?.list?.length) return [];
 
   const tmpData = {
@@ -26,6 +36,10 @@ const getData = (source: any, t: any) => {
   return [tmpData];
 };
 
+/**
+ * Use api hook to fetch data from api
+ * @returns {Object} response
+ */
 const useApi = () => {
   const [data, setData] = useState({});
   const { coordinates } = useContext(LayoutContext);
@@ -36,14 +50,14 @@ const useApi = () => {
     isLoading,
     error,
     refetch,
-  } = useRequest(Model.AIR_POLLUTION, getParams());
+  } = useRequest(Model.AIR_POLLUTION, getQueryParams());
 
   useEffect(() => {
     if (coordinates.latitude && coordinates.longitude) refetch();
   }, [coordinates, refetch]);
 
   useEffect(() => {
-    setData(getData(source, t));
+    setData(formatResponse(source, t));
   }, [source, t]);
 
   return { data, isLoading, error };

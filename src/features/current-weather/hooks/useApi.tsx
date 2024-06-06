@@ -3,6 +3,10 @@ import useRequest from 'src/api/useRequest';
 import { LayoutContext } from 'src/layout/layout.context';
 import { Model } from 'src/models/enums/model.enum';
 
+/**
+ * Use api hook to fetch data from api
+ * @returns {Object} response
+ */
 const useApi = () => {
   const [data, setData] = useState({});
   const { coordinates } = useContext(LayoutContext);
@@ -10,11 +14,11 @@ const useApi = () => {
 
   useEffect(() => {
     if (coordinates.latitude && coordinates.longitude) refetch();
-  }, [coordinates]);
+  }, [coordinates, refetch]);
 
   useEffect(() => {
     setData(source);
-  }, [source, refetch]);
+  }, [source]);
 
   return { data, isLoading, error };
 };

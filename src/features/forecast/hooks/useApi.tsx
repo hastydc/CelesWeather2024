@@ -4,7 +4,13 @@ import useRequest from 'src/api/useRequest';
 import { LayoutContext } from 'src/layout/layout.context';
 import { Model } from 'src/models/enums/model.enum';
 
-const getList = (source: any, t: any) => {
+/**
+ * Format response from api to send to chart component
+ * @param {Object} source
+ * @param {Function} t
+ * @returns {Array} response
+ */
+const formatResponse = (source: any, t: any) => {
   let list = source?.list;
 
   if (!list?.length) return [];
@@ -21,6 +27,10 @@ const getList = (source: any, t: any) => {
   return list;
 };
 
+/**
+ * Use api hook to fetch data from api
+ * @returns {Object} response
+ */
 const useApi = () => {
   const [data, setData] = useState({});
   const { coordinates } = useContext(LayoutContext);
@@ -38,7 +48,7 @@ const useApi = () => {
   }, [coordinates, refetch]);
 
   useEffect(() => {
-    setData(getList(source, t));
+    setData(formatResponse(source, t));
   }, [source, t]);
 
   return { data, isLoading, error };

@@ -2,6 +2,10 @@ import Style from './Header.module.scss';
 import Actions from './components/actions/Actions';
 import Title from './components/title/Title';
 
+/**
+ * Header component
+ * @returns {Object} component
+ */
 const Header = () => {
   return (
     <>

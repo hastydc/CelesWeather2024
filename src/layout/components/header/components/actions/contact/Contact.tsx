@@ -3,6 +3,10 @@ import { FaRegMessage } from 'react-icons/fa6';
 import Style from './Contact.module.scss';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Contact component for header
+ * @returns {Object} response
+ */
 const Contact = () => {
   const mailTo = (e: any): void => {
     window.location.href = `mailto:${process.env.REACT_APP_EMAIL}`;

@@ -1,11 +1,15 @@
 import CardInfo from 'src/ui/cards/card-info/CardInfo';
-import { cardInfo } from './Forecast.mock';
+import { cardInfo } from './Forecast.props';
 import CardChart from 'src/ui/cards/card-chart/CardChart';
 import useApi from './hooks/useApi';
 import { useTranslation } from 'react-i18next';
 import CardError from 'src/ui/cards/card-error/CardError';
 import { ChartType } from 'src/models/enums/chartType.enum';
 
+/**
+ * Fore cast component page
+ * @returns {Object} component
+ */
 const Forecast = () => {
   const { data, isLoading, error } = useApi();
   const { t } = useTranslation();

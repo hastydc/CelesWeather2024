@@ -6,6 +6,10 @@ import Style from './MenuSidebar.module.scss';
 import Logo from 'src/ui/logo/Logo';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Menu sidebar component
+ * @returns {Object} component
+ */
 const MenuSideBar = () => {
   const { t } = useTranslation();
 
