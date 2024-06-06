@@ -5,6 +5,7 @@ import CardChart from 'src/ui/cards/card-chart/CardChart';
 import useApi from './hooks/useApi';
 import CardError from 'src/ui/cards/card-error/CardError';
 import { useTranslation } from 'react-i18next';
+import { ChartType } from 'src/models/enums/chartType.enum';
 
 const AirPollution = () => {
   const { data, isLoading, error } = useApi();
@@ -29,9 +30,13 @@ const AirPollution = () => {
               isLoading ? 'card-loading' : ''
             }`}
           >
-            {error ? <CardError /> : null}
+            {error ? <CardError /> : <></>}
 
-            {!isLoading && !error ? <CardChart data={data} /> : null}
+            {!isLoading && !error ? (
+              <CardChart data={data} type={ChartType.BAR} />
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>

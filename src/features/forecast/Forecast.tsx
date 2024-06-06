@@ -16,9 +16,7 @@ const Forecast = () => {
 
         <div className={`card-full`}>
           <h2 className={`text-gray`}>Chart</h2>
-          <div className={`card card-green card-full`}>
-            <CardChart />
-          </div>
+          <div className={`card card-green card-full`}></div>
         </div>
       </div>
     </>

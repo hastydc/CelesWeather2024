@@ -37,6 +37,12 @@ body {
   color: var(--color-gray-light);
 }
 
+.chart-wrapper {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width: rem(4);
 }

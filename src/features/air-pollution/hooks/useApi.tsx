@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import useRequest from 'src/api/useRequest';
 import { LayoutContext } from 'src/layout/layout.context';
 import { Model } from 'src/models/enums/model.enum';
-import { Payload } from 'src/models/interfaces/payload.interface';
 
 const getParams = (): string => {
   const date = new Date();
@@ -13,16 +13,29 @@ const getParams = (): string => {
 };
 
 const useApi = () => {
+  const [data, setData] = useState({});
   const { coordinates } = useContext(LayoutContext);
+  const { t } = useTranslation();
 
-  const { data, isLoading, error, refetch } = useRequest(
-    Model.AIR_POLLUTION,
-    getParams()
-  );
+  const {
+    data: source,
+    isLoading,
+    error,
+    refetch,
+  } = useRequest(Model.AIR_POLLUTION, getParams());
 
   useEffect(() => {
     if (coordinates.latitude && coordinates.longitude) refetch();
   }, [coordinates]);
+
+  useEffect(() => {
+    setData([
+      {
+        name: t('airPollutionInLastThreeMonths'),
+        ...(source?.list[0]?.components ?? {}),
+      },
+    ]);
+  }, [source]);
 
   return { data, isLoading, error };
 };

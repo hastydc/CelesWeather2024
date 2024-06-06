@@ -7,3 +7,9 @@ export const getCurrentDate = (): string => {
 
   return `${weekday}, ${month} ${day}`;
 };
+
+export const getHexColor = (): string => {
+  const n = (Math.random() * 0xfffff * 1000000).toString(16);
+
+  return `#${n.slice(0, 6)}`;
+};

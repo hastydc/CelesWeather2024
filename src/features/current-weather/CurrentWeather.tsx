@@ -3,6 +3,7 @@ import CardChart from 'src/ui/cards/card-chart/CardChart';
 import { cardInfo } from './CurrentWeather.mock';
 import useRequest from 'src/api/useRequest';
 import { Model } from 'src/models/enums/model.enum';
+import { ChartType } from 'src/models/enums/chartType.enum';
 
 const CurrentWeather = () => {
   // const { data } = useRequest(Entity.WEATHER);
@@ -17,7 +18,7 @@ const CurrentWeather = () => {
         <div className={`card-full`}>
           <h2 className={`text-gray`}>Chart</h2>
           <div className={`card card-green card-*full`}>
-            <CardChart />
+            <CardChart type={ChartType.LINE} />
           </div>
         </div>
       </div>

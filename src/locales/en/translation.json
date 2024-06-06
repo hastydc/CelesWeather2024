@@ -7,5 +7,6 @@
   "airPollution": "Air pollution",
   "precipitationProbabilityAndTemperature": "Precipitation probability and temperature",
   "currentWeather": "Current weather",
-  "loading": "Loading"
+  "loading": "Loading",
+  "airPollutionInLastThreeMonths": "Air pollution last 3 months"
 }

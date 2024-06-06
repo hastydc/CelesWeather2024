@@ -8,9 +8,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import Style from './Chart.module.scss';
 
-const data = [
+const dataS = [
   {
     name: 'Page A',
     uv: 4000,
@@ -55,12 +54,17 @@ const data = [
   },
 ];
 
-const Chart = () => {
+type ChartProps = {
+  data: any;
+};
+
+const ChartLine = ({ data }: ChartProps) => {
+  console.log(data);
   return (
     <>
-      <div className={Style.chart}>
+      <div className="chart-wrapper">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart width={500} height={300} data={data}>
+          <LineChart width={500} height={300} data={dataS}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" padding={{ left: 30, right: 30 }} />
             <YAxis />
@@ -80,4 +84,4 @@ const Chart = () => {
   );
 };
 
-export default Chart;
+export default ChartLine;
