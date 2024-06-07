@@ -52,7 +52,9 @@ body {
 
   &:hover {
     .tooltip {
-      display: flex;
+      @include media(tablet) {
+        display: flex;
+      }
     }
   }
 }

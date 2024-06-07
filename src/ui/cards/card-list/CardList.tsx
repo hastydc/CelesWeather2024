@@ -33,7 +33,12 @@ const CardList = ({ th, td, title }: CardListProps) => {
             {td.map((items, index) => (
               <tr key={`itdr-${index}`} className={Style.tr}>
                 {items.map((value, indexTd) => (
-                  <td key={`itdd-${indexTd}`} className={Style.td}>
+                  <td
+                    key={`itdd-${indexTd}`}
+                    className={`${Style.td} ${
+                      indexTd > 1 ? Style.tdValue : ''
+                    }`}
+                  >
                     {value}
                   </td>
                 ))}
