@@ -64,7 +64,7 @@ const CardWeather = ({ data }: CardWeatherProps) => {
             </div>
 
             <div className={Style.info}>
-              {Object.keys(data[baseKey]).map((key, index) => (
+              {Object.keys(data[baseKey] ?? {}).map((key, index) => (
                 <div className={Style.values} key={`dwm-${index}`}>
                   <div className={Style.key}>{key}</div>
 
